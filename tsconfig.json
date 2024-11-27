@@ -1,7 +1,24 @@
 {
+  // Extiende la configuración base de TypeScript de Expo.
+  // Esto asegura que la configuración predeterminada de TypeScript en los proyectos Expo sea utilizada.
   "extends": "expo/tsconfig.base",
+
+  // Opciones específicas para el compilador TypeScript.
   "compilerOptions": {
+    // Habilita el modo "estricto" de TypeScript, lo que incluye varias configuraciones
+    // para asegurar un código más seguro y robusto (por ejemplo, evitar variables con valores nulos o indefinidos).
     "strict": true
   },
-  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]
+
+  // Archivos que deben ser incluidos en el análisis de TypeScript.
+  "include": [
+    // Incluir todos los archivos con extensión .ts (archivos TypeScript) en cualquier subdirectorio.
+    "**/*.ts",
+    // Incluir todos los archivos con extensión .tsx (archivos TypeScript con JSX) en cualquier subdirectorio.
+    "**/*.tsx",
+    // Incluir tipos personalizados que puedan estar en la carpeta .expo/types.
+    ".expo/types/**/*.ts",
+    // Incluir un archivo específico de definiciones de tipos para Expo.
+    "expo-env.d.ts"
+  ]
 }
